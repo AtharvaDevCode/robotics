@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ENSEMBLE INC - Intelligent Robotics Procurement
 
-## Getting Started
+Transform your warehouse, shipping depot, or storage facility with intelligent robotics solutions. We analyze your business operations and procure the perfect automation solution to eliminate human fatigue and maximize profitability.
 
-First, run the development server:
+**Website**: [ensemble-inc.com](https://ensemble-inc.com)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🤖 About ENSEMBLE INC
+
+We help organizations transition to next-generation industrial automation by:
+
+- **Analyzing** your facility operations and workflows
+- **Procuring** industry-leading robotics solutions tailored to your needs
+- **Deploying** seamless automation systems that drive measurable ROI
+- **Supporting** your transition to the future of work
+
+## ✨ Features
+
+- **Hero Section** - Compelling value proposition and clear call-to-action
+- **Process Overview** - Transparent 3-step automation process
+- **Case Studies** - Real results and impact from successful deployments
+- **Lead Generation Form** - Streamlined inquiry system for business analysis
+- **Responsive Design** - Optimized for desktop and mobile experiences
+- **Modern UI** - Smooth animations and glass-morphism effects
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org) - React framework for production
+- **Language**: [TypeScript](https://www.typescriptlang.org) - Type-safe JavaScript
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com) - Utility-first CSS framework
+- **Animations**: [Framer Motion](https://www.framer.com/motion) - Modern React animation library
+- **Icons**: [Lucide React](https://lucide.dev) - Beautiful, consistent SVG icons
+- **Linting**: [ESLint](https://eslint.org) - JavaScript code quality tool
+
+## 📋 Project Structure
+
+```
+app/
+├── components/
+│   ├── Navbar.tsx        - Navigation with desktop/mobile support
+│   ├── Hero.tsx          - Main value proposition section
+│   ├── Process.tsx       - 3-step process overview
+│   ├── Results.tsx       - Case studies and results showcase
+│   ├── LeadForm.tsx      - Business analysis inquiry form
+│   └── Footer.tsx        - Site footer with links
+├── page.tsx              - Home page
+├── about/page.tsx        - About us page
+├── career/page.tsx       - Career opportunities page
+├── privacy/page.tsx      - Privacy policy
+├── terms/page.tsx        - Terms and conditions
+└── layout.tsx            - Root layout
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Node.js 18+ 
+- pnpm (or npm/yarn)
 
-## Learn More
+### Installation
 
-To learn more about Next.js, take a look at the following resources:
+Clone the repository:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+git clone https://github.com/PointX-Lab/robotics.git
+cd robotics-procurement
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Install dependencies:
 
-## Deploy on Vercel
+```bash
+pnpm install
+# or
+npm install
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Development
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Run the development server:
+
+```bash
+pnpm dev
+# or
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application. The page auto-updates as you edit files.
+
+### Build for Production
+
+```bash
+pnpm build
+pnpm start
+```
+
+## 📝 Available Scripts
+
+- `pnpm dev` - Start development server
+- `pnpm build` - Create optimized production build
+- `pnpm start` - Run production server
+- `pnpm lint` - Run ESLint
+
+## 🎨 Design System
+
+The site uses a modern, dark-themed design with:
+
+- **Primary Color**: Cyan (#06B6D4) - Used for CTAs and accents
+- **Background**: Slate/Black palette for contrast
+- **Typography**: Bold, tracking-wide headers with readable body text
+- **Components**: Reusable React components with Tailwind styling
+
+## 🔗 Key Links
+
+- [About Us](./app/about/page.tsx)
+- [Careers](./app/career/page.tsx)
+- [Privacy Policy](./app/privacy/page.tsx)
+- [Terms & Conditions](./app/terms/page.tsx)
+
+## 📧 Contact
+
+For business inquiries or support, reach out to:
+
+- **Email**: contact@ensembleinc.com
+- **Phone**: +1 (415) 555-1234
+- **Address**: 123 Innovation Drive, San Francisco, CA 94105
+
+## 📄 License
+
+This project is proprietary to ENSEMBLE INC.
