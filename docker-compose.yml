@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  robotics-app:
+    build: .
+    container_name: robotics-app
+    restart: always
+    ports:
+      - "3001:3001"
+    mem_limit: 700m
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
