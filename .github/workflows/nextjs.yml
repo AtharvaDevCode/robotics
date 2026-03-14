@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: SSH into EC2 and deploy
+      - name: Deploy to EC2
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.EC2_HOST }}
@@ -22,16 +22,21 @@ jobs:
           script: |
             echo "🚀 Starting deployment..."
             
-            # Navigate to app directory
             cd /home/ubuntu/robotics
             
-            # Pull latest code
+            echo "📦 Pulling code..."
             git pull origin main
             
-            # Build and restart with docker-compose (handles limits & config)
-            sudo docker-compose up -d --build
+            echo "🛑 Stopping old container..."
+            sudo docker stop robotics-app || true
+            sudo docker rm robotics-app || true
             
-            # Clean up old images (safe prune)
+            echo "🔨 Building and starting..."
+            sudo docker compose up -d --build
+            
+            echo "🧹 Cleaning up..."
             sudo docker image prune -f
             
-            echo "✅ Deployment complete!"
+            echo "✅ Done!"
+            sudo docker ps
+            sudo docker stats --no-stream
