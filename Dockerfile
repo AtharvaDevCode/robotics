@@ -1,6 +1,6 @@
 FROM node:18-alpine AS base
 
-# Install pnpm
+# Install dependencies
 FROM base AS deps
 RUN apk add --no-cache libc6-compat
 WORKDIR /app
@@ -11,6 +11,7 @@ RUN pnpm install --frozen-lockfile
 # Build the app
 FROM base AS builder
 WORKDIR /app
+RUN npm install -g pnpm  # ⚠️ Install pnpm in builder stage too!
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NEXT_TELEMETRY_DISABLED 1
