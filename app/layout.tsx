@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} antialiased selection:bg-primary selection:text-white`}
+        className={`${inter.className} antialiased bg-white text-gray-900 selection:bg-red-600 selection:text-white`}
       >
         <Navbar />
         {children}
