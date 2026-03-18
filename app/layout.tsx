@@ -7,18 +7,19 @@ import { Navbar } from "./components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ensemble Inc. | Future-Ready Robotics for Business",
+  title: "Ensemble Control Inc. | Industrial Robotics Procurement",
   description:
-    "We source, compare, and deploy industrial robots for warehouses and logistics. Increase efficiency by 300%.",
+    "Ensemble Control Inc. sources, compares, and deploys industrial robotics solutions for warehouses, logistics, and manufacturing operations.",
   keywords: [
     "Robotics procurement",
     "Warehouse automation",
     "Industrial robots",
-    "Logistics AI",
+    "Logistics automation",
+    "Manufacturing robotics",
   ],
   openGraph: {
-    title: "Automate Your Workforce",
-    description: "Get the perfect robot for your business needs.",
+    title: "Ensemble Control Inc. | Robotics Procurement",
+    description: "Professional robotics sourcing and deployment for industrial operations.",
     type: "website",
   },
 };
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${inter.className} antialiased bg-white text-gray-900 selection:bg-red-600 selection:text-white`}
+        className={`${inter.className} antialiased bg-white text-gray-900 selection:bg-[#C5393A] selection:text-white`}
       >
         <Navbar />
         {children}

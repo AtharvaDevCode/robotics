@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import { Lock, Eye, Database, UserCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Ensemble Inc - Data Protection",
-  description: "Learn how Ensemble Inc protects your data and privacy. Our commitment to data security and compliance.",
+  title: "Privacy Policy | Ensemble Control Inc - Data Protection",
+  description: "Learn how Ensemble Control Inc protects your data and privacy. Our commitment to data security and compliance.",
 };
 
 const PrivacyPage = () => {
@@ -37,7 +37,7 @@ const PrivacyPage = () => {
     },
     {
       title: "2. How We Use Your Information",
-      content: "Your information is used to: provide robotics procurement services, communicate about your inquiries, send service updates, improve our website, and comply with legal obligations. We never sell your personal data to third parties.",
+      content: "Your information is used to: provide robotics procurement services, communicate about your inquiries, send service updates, improve our website, and comply with legal obligations. We do not sell your personal data to third parties.",
     },
     {
       title: "3. Data Sharing",
@@ -49,7 +49,7 @@ const PrivacyPage = () => {
     },
     {
       title: "5. Your Rights",
-      content: "You have the right to: access your personal data, correct inaccurate data, request deletion, object to processing, data portability, and withdraw consent. Contact privacy@ensembleinc.com to exercise these rights.",
+      content: "You have the right to: access your personal data, correct inaccurate data, request deletion, object to processing, data portability, and withdraw consent. Contact privacy@ensemblecontrol.com to exercise these rights.",
     },
     {
       title: "6. Cookies and Tracking",
@@ -73,25 +73,25 @@ const PrivacyPage = () => {
     },
     {
       title: "11. Compliance",
-      content: "We comply with GDPR (EU), CCPA (California), and other applicable data protection regulations. Our Data Protection Officer can be reached at dpo@ensembleinc.com.",
+      content: "We comply with GDPR (EU), CCPA (California), and other applicable data protection regulations. Our Data Protection Officer can be reached at dpo@ensemblecontrol.com.",
     },
     {
       title: "12. Contact Us",
-      content: "For privacy-related questions or concerns, contact: privacy@ensembleinc.com or Ensemble Inc, 123 Innovation Drive, San Francisco, CA 94105, United States.",
+      content: "For privacy-related questions or concerns, contact: privacy@ensemblecontrol.com or Ensemble Control Inc, 1252 E Main Street Unit D, Columbus, OH 43205, United States.",
     },
   ];
 
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-20 bg-white">
       {/* Hero Section */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h1 className="text-4xl font-extrabold mb-4">
+            <h1 className="text-4xl font-extrabold mb-4 text-gray-900">
               Privacy <span className="text-gradient">Policy</span>
             </h1>
-            <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-              Your data protection is our priority. We&apos;re committed to transparency 
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Your data protection is our priority. We are committed to transparency 
               and security in handling your information.
             </p>
           </div>
@@ -99,10 +99,10 @@ const PrivacyPage = () => {
           {/* Principles Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
             {principles.map((principle, idx) => (
-              <div key={idx} className="glass-panel p-6 rounded-xl text-center">
-                <div className="text-primary mb-4 flex justify-center">{principle.icon}</div>
-                <h3 className="font-bold mb-2">{principle.title}</h3>
-                <p className="text-slate-400 text-sm">{principle.description}</p>
+              <div key={idx} className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm text-center">
+                <div className="text-[#C5393A] mb-4 flex justify-center">{principle.icon}</div>
+                <h3 className="font-bold mb-2 text-gray-900">{principle.title}</h3>
+                <p className="text-gray-600 text-sm">{principle.description}</p>
               </div>
             ))}
           </div>
@@ -110,15 +110,15 @@ const PrivacyPage = () => {
       </section>
 
       {/* Policy Sections */}
-      <section className="py-20 bg-slate-900/50">
+      <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-slate-400 mb-8">Last updated: January 2025</p>
+          <p className="text-gray-500 mb-8">Last updated: March 2025</p>
 
           <div className="space-y-8">
             {sections.map((section, idx) => (
-              <div key={idx} className="glass-panel p-6 rounded-xl">
-                <h2 className="text-xl font-bold text-primary mb-4">{section.title}</h2>
-                <p className="text-slate-300 leading-relaxed">{section.content}</p>
+              <div key={idx} className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                <h2 className="text-xl font-bold text-[#C5393A] mb-4">{section.title}</h2>
+                <p className="text-gray-700 leading-relaxed">{section.content}</p>
               </div>
             ))}
           </div>
@@ -126,16 +126,16 @@ const PrivacyPage = () => {
       </section>
 
       {/* Compliance Badges */}
-      <section className="py-20">
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-bold mb-4">Compliance & Certifications</h2>
-            <p className="text-slate-400">We meet global data protection standards.</p>
+            <h2 className="text-2xl font-bold mb-4 text-gray-900">Compliance & Certifications</h2>
+            <p className="text-gray-600">We meet global data protection standards.</p>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
             {["GDPR Compliant", "CCPA Compliant", "SOC 2 Type II", "ISO 27001"].map((badge, idx) => (
-              <div key={idx} className="glass-panel px-6 py-3 rounded-full border border-primary/30">
-                <span className="text-primary font-semibold">{badge}</span>
+              <div key={idx} className="bg-white px-6 py-3 rounded-full border border-[#C5393A]/30 shadow-sm">
+                <span className="text-[#C5393A] font-semibold">{badge}</span>
               </div>
             ))}
           </div>
