@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar";
+import { Chatbot } from "./components/Chatbot"; // Add this
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,11 +18,6 @@ export const metadata: Metadata = {
     "Logistics automation",
     "Manufacturing robotics",
   ],
-  openGraph: {
-    title: "Ensemble Control Inc. | Robotics Procurement",
-    description: "Professional robotics sourcing and deployment for industrial operations.",
-    type: "website",
-  },
 };
 
 export default function RootLayout({
@@ -37,6 +33,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <Chatbot /> {/* Add this line */}
       </body>
     </html>
   );
