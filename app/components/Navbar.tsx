@@ -24,6 +24,7 @@ export const Navbar = () => {
               <Link href="/careers" className="text-gray-600 hover:text-[#C5393A] transition-colors">Careers</Link>
               <Link href="#process" className="text-gray-600 hover:text-[#C5393A] transition-colors">Process</Link>
               <Link href="#results" className="text-gray-600 hover:text-[#C5393A] transition-colors">Results</Link>
+              <Link href="#research" className="text-gray-600 hover:text-[#C5393A] transition-colors">Research</Link>
               <Link href="#contact" className="bg-[#C5393A] hover:bg-[#9C2A2B] text-white font-bold py-2 px-6 rounded-full transition-all shadow-lg shadow-red-500/25">
                 Contact Us
               </Link>

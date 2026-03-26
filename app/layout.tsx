@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "./components/Footer";
 import { Navbar } from "./components/Navbar";
-import { Chatbot } from "./components/Chatbot"; // Add this
+import { Chatbot } from "./components/Chatbot";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,13 +11,15 @@ export const metadata: Metadata = {
   title: "Ensemble Control Inc. | Industrial Robotics Procurement",
   description:
     "Ensemble Control Inc. sources, compares, and deploys industrial robotics solutions for warehouses, logistics, and manufacturing operations.",
-  keywords: [
-    "Robotics procurement",
-    "Warehouse automation",
-    "Industrial robots",
-    "Logistics automation",
-    "Manufacturing robotics",
-  ],
+};
+
+// Add proper viewport for mobile
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#C5393A",
 };
 
 export default function RootLayout({
@@ -33,7 +35,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <Chatbot /> {/* Add this line */}
+        <Chatbot />
       </body>
     </html>
   );
