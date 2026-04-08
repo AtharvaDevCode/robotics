@@ -12,28 +12,48 @@ export const LeadForm = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
-    
-    // Reset after showing success
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({
-        company: '',
-        industry: 'warehouse',
-        email: '',
-        phone: '',
-        requirements: ''
+    setError('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
-    }, 3000);
+
+      const data = await response.json();
+
+      if (data.error) {
+        throw new Error(data.msg || 'Failed to submit form');
+      }
+
+      setSubmitted(true);
+      
+      // Reset form after showing success
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({
+          company: '',
+          industry: 'warehouse',
+          email: '',
+          phone: '',
+          requirements: ''
+        });
+      }, 3000);
+
+    } catch (err: any) {
+      console.error('Form submission error:', err);
+      setError(err.message || 'Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -62,6 +82,12 @@ export const LeadForm = () => {
             <h2 className="text-3xl font-bold mb-4 text-gray-900">Request a Consultation</h2>
             <p className="text-gray-600">Provide your operational details. We will identify appropriate robotics solutions.</p>
           </div>
+
+          {error && (
+            <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm">
+              {error}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -132,7 +158,7 @@ export const LeadForm = () => {
             <button 
               type="submit" 
               disabled={isSubmitting}
-              className="w-full bg-[#C5393A] hover:bg-[#9C2A2B] disabled:bg-gray-400 text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-red-500/25 transform hover:-translate-y-1 disabled:transform-none"
+              className="w-full bg-[#C5393A] hover:bg-[#9C2A2B] disabled:bg-gray-400 text-white font-bold py-4 rounded-lg transition-all shadow-lg shadow-red-500/25 transform hover:-translate-y-1 disabled:transform-none disabled:cursor-not-allowed"
             >
               {isSubmitting ? 'Submitting...' : 'Submit Request'}
             </button>
